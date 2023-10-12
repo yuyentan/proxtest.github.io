@@ -1,0 +1,214 @@
+* {
+  font-family: "source han serif";
+  margin: 0;
+}
+/* =====================Radio Btn======================= */
+.main_radio_btn {
+  background-color: #666666;
+  width: 100%;
+  height: 48px;
+  text-align: center;
+
+  &::after {
+    content: attr(placeholder);
+    font-size: 15px;
+    display: inline-block;
+    line-height: 48px;
+    vertical-align: middle;
+    color: #cccccc;
+  }
+  &:checked {
+    background-color: #e15231;
+    &::after {
+      color: white;
+    }
+  }
+}
+/* ======================BTN==================== */
+@mixin btn($b, $c, $o) {
+  padding: 11px 16px;
+  background-color: $b;
+  color: $c;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 4px;
+  border: $o solid 1px;
+  font-size: 16px;
+  &:hover {
+    background-color: #3f3f3f;
+    color: white;
+    border: #3f3f3f solid 1px;
+  }
+  &:active {
+    background-color: black;
+    color: white;
+    border: black solid 1px;
+  }
+}
+
+.main-btn {
+  @include btn(white, #e15231, #cccccc);
+}
+.sub-btn {
+  @include btn(white, #3f3f3f, #cccccc);
+}
+.input-btn {
+  @include btn(#666666, white, #666666);
+}
+.warn-btn {
+  @include btn(#bf1400, white, #bf1400);
+}
+.test-btn {
+  @include btn(#91e4df, black, #91e4df);
+
+  .circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    margin-right: 5px;
+
+    .icon-Check {
+      color: #91e4df;
+      font-size: 14px;
+    }
+  }
+  &:hover {
+    .icon-Check {
+      color: #3f3f3f;
+    }
+  }
+  &:active {
+    .icon-Check {
+      color: black;
+    }
+  }
+}
+
+// bs Dropdown
+
+.dropdown{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  p{
+    margin: 0;
+  }
+
+  .title{
+    color: #666666;
+    margin-right: 8px;
+  }
+
+  .dropdown-toggle{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border:none;
+    outline: none;
+    border-radius: 0;
+    border-bottom: 1px solid #cccccc;
+    text-align: left;
+    background: none;
+    height: 48px;
+
+    .icon-Arrow{
+      color: #666666;
+    }
+
+    &::after{
+      display: none;
+    }
+
+    &.show{
+      border-bottom: 1px solid #91E4DF;
+      .icon-Arrow{
+        color: #91E4DF;
+        transform: rotate(180deg);
+      }
+      .select{
+        color: #3DAFB7;
+      }
+    }
+    &.error{
+      border-bottom: 1px solid #BF1400;
+      .select{
+        color: #BF1400;
+      }
+    }
+    &.readonly{
+      background-color: #D9D9D9;
+    }
+  }
+
+  .dropdown-menu{
+    border-radius: 0;
+    // width: 100%;
+    // transform: translate3d(32px,55px, 0px) !important;
+  }
+  // button.dropdown-toggle::after{
+  //   display: none;
+  // }
+}
+.dropdown-item{
+  &.active,
+  &:active{
+    background-color: #FFBC6C;
+  }
+}
+
+
+.calendar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  p{
+    margin: 0;
+  }
+
+  .title{
+    color: #666666;
+    margin-right: 8px;
+  }
+  .calendar-input{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+    text-align: left;
+    height: 48px;
+  }
+}
+
+.form-switch{
+  .form-check-input {
+    width: 40px;
+    height: 24px;
+
+    &:focus {
+      
+    }
+
+    &:checked {
+      background: white;
+      border: none;
+      &[type=checkbox] {
+        background-image: none;
+      }
+      }
+    }
+  }
+
+
+.box{
+  height: 100px;
+  width: 100%;
+  background-color: #666666;
+  // position: fixed;
+  // bottom: 0;
+}
